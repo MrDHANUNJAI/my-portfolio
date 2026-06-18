@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Creative Showcase</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- AOS -->
+
+  <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+  <!-- VANILLA TILT -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      background:#050505;
+
+      color:#fff;
+
+      font-family:'Poppins',sans-serif;
+
+      overflow-x:hidden;
+
+    }
+
+    /* =========================
+       CURSOR GLOW
+    ========================= */
+
+    .cursor-glow{
+
+      position:fixed;
+
+      width:350px;
+      height:350px;
+
+      background:
+      radial-gradient(
+        circle,
+        rgba(255,0,0,0.22),
+        transparent 70%
+      );
+
+      pointer-events:none;
+
+      z-index:1;
+
+      transform:
+      translate(-50%,-50%);
+
+      filter:blur(40px);
+
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+
+      height:100vh;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      text-align:center;
+
+      position:relative;
+
+      overflow:hidden;
+
+    }
+
+    /* BG */
+
+    .hero::before{
+
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+      url("assets/images/showcase/bg.jpg")
+      center/cover;
+
+      opacity:0.25;
+
+      animation:zoomBg 12s ease-in-out infinite alternate;
+
+    }
+
+    @keyframes zoomBg{
+
+      from{
+        transform:scale(1);
+      }
+
+      to{
+        transform:scale(1.1);
+      }
+
+    }
+
+    .hero-content{
+
+      position:relative;
+
+      z-index:2;
+
+    }
+
+    .hero h1{
+
+      font-size:110px;
+
+      font-weight:800;
+
+      text-transform:uppercase;
+
+      line-height:1;
+
+      text-shadow:
+      0 0 30px rgba(255,0,0,0.5);
+
+    }
+
+    .hero p{
+
+      margin-top:25px;
+
+      font-size:20px;
+
+      color:#d0d0d0;
+
+      letter-spacing:3px;
+
+    }
+
+    /* =========================
+       SHOWCASE GRID
+    ========================= */
+
+    .showcase{
+
+      padding:120px 8%;
+
+      position:relative;
+
+    }
+
+    .showcase-grid{
+
+      columns:3 320px;
+
+      column-gap:25px;
+
+    }
+
+    /* CARD */
+
+    .showcase-card{
+
+      position:relative;
+
+      overflow:hidden;
+
+      margin-bottom:25px;
+
+      border-radius:28px;
+
+      cursor:pointer;
+
+      break-inside:avoid;
+
+      border:
+      2px solid rgba(255,255,255,0.05);
+
+      transition:0.5s;
+
+      background:#111;
+
+    }
+
+    /* IMAGE */
+
+    .showcase-card img{
+
+      width:100%;
+
+      display:block;
+
+      transition:0.8s;
+
+    }
+
+    /* GLOW */
+
+    .showcase-card::before{
+
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+      linear-gradient(
+        transparent,
+        rgba(255,0,0,0.25)
+      );
+
+      opacity:0;
+
+      transition:0.5s;
+
+      z-index:1;
+
+    }
+
+    /* OVERLAY */
+
+    .overlay{
+
+      position:absolute;
+
+      inset:0;
+
+      z-index:2;
+
+      display:flex;
+
+      flex-direction:column;
+
+      justify-content:flex-end;
+
+      padding:30px;
+
+      opacity:0;
+
+      transition:0.5s;
+
+      background:
+      linear-gradient(
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.9)
+      );
+
+    }
+
+    .overlay h3{
+
+      font-size:30px;
+
+      margin-bottom:10px;
+
+    }
+
+    .overlay p{
+
+      color:#ddd;
+
+      margin-bottom:20px;
+
+    }
+
+    .overlay button{
+
+      width:max-content;
+
+      padding:12px 28px;
+
+      border:none;
+
+      border-radius:40px;
+
+      background:#ff1e1e;
+
+      color:#fff;
+
+      font-weight:600;
+
+      cursor:pointer;
+
+      transition:0.4s;
+
+    }
+
+    .overlay button:hover{
+
+      transform:scale(1.08);
+
+    }
+
+    /* HOVER */
+
+    .showcase-card:hover{
+
+      transform:
+      translateY(-12px);
+
+      border-color:#ff1e1e;
+
+      box-shadow:
+      0 0 50px rgba(255,0,0,0.3);
+
+    }
+
+    .showcase-card:hover img{
+
+      transform:scale(1.08);
+
+    }
+
+    .showcase-card:hover::before{
+
+      opacity:1;
+
+    }
+
+    .showcase-card:hover .overlay{
+
+      opacity:1;
+
+    }
+
+    /* =========================
+       POPUP
+    ========================= */
+
+    .popup{
+
+      position:fixed;
+
+      inset:0;
+
+      background:
+      rgba(0,0,0,0.95);
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      opacity:0;
+      visibility:hidden;
+
+      transition:0.5s;
+
+      z-index:99999;
+
+    }
+
+    .popup.active{
+
+      opacity:1;
+      visibility:visible;
+
+    }
+
+    /* IMAGE */
+
+    .popup img{
+
+      width:85%;
+      max-width:1300px;
+
+      max-height:90vh;
+
+      object-fit:contain;
+
+      border-radius:20px;
+
+      transform:scale(0.7);
+
+      transition:0.5s;
+
+      box-shadow:
+      0 0 60px rgba(255,0,0,0.25);
+
+    }
+
+    .popup.active img{
+
+      transform:scale(1);
+
+    }
+
+    /* CLOSE */
+
+    .close-popup{
+
+      position:absolute;
+
+      top:30px;
+      right:40px;
+
+      font-size:55px;
+
+      color:#fff;
+
+      cursor:pointer;
+
+      transition:0.4s;
+
+    }
+
+    .close-popup:hover{
+
+      color:#ff1e1e;
+
+      transform:rotate(180deg);
+
+    }
+
+    /* =========================
+       SPARK EFFECT
+    ========================= */
+
+    .spark{
+
+      position:absolute;
+
+      width:8px;
+      height:8px;
+
+      background:#ff1e1e;
+
+      border-radius:50%;
+
+      pointer-events:none;
+
+      animation:sparkAnim 1s linear forwards;
+
+      z-index:999999;
+
+    }
+
+    @keyframes sparkAnim{
+
+      to{
+
+        transform:
+        translate(
+          var(--x),
+          var(--y)
+        )
+        scale(0);
+
+        opacity:0;
+
+      }
+
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:768px){
+
+      .hero h1{
+
+        font-size:60px;
+
+      }
+
+      .hero p{
+
+        font-size:15px;
+
+      }
+
+      .overlay h3{
+
+        font-size:24px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- CURSOR -->
+
+  <div class="cursor-glow"></div>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content"
+         data-aos="zoom-in">
+
+      <h1>
+        Creative
+        Showcase
+      </h1>
+
+      <p>
+        DESIGN • BRANDING • CINEMATIC • AI ART
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- SHOWCASE -->
+
+  <section class="showcase">
+
+    <div class="showcase-grid">
+
+      <!-- CARD -->
+
+      <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/Airbrush-image-extender.jpeg"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+         <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/last surviver.jpeg"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+   <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/minecraft.jpg"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+      <!-- CARD -->
+   <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/new world.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+         <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/solo.jpg"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+   <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/Untitled-1.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+   <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/WhatsApp Image 2025-10-20 at 10.26.18_49c04db5.jpg"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/banner 2.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/banner1.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/ChatGPT Image May 15, 2026, 03_00_49 PM.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/dhanu thumbnail.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/friday thumbnail.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/logo.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/my image.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/portfolio balaji.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+        <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/thumbnail.png"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>Gaming Poster</h3>
+
+          <p>
+            Photoshop • AI • Cinematic
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+      <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/edited.jpg"
+          alt="Design">
+
+        <div class="overlay">
+
+          <h3>YouTube Thumbnail</h3>
+
+          <p>
+            CTR Focused Design
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="thumbnails/editer.jpg"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/10.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+     <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/11.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/12.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/123.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/13.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/14.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/15.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/16.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/17.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/18.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/19.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/20.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/ChatGPT Image May 15, 2026, 02_55_46 PM.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+           <div class="showcase-card"
+           data-aos="fade-up">
+
+        <img
+          src="myEdits/ChatGPT Image May 15, 2026, 03_00_49 PM.png"
+          alt="Design">
+
+        <div class="overlay">
+          
+
+          <h3>Esports Branding</h3>
+
+          <p>
+            Logo • Branding • Identity
+          </p>
+
+          <button>
+            View Project
+          </button>
+
+        </div>
+
+      </div>
+      <!-- ADD MORE -->
+
+    </div>
+
+  </section>
+
+  <!-- POPUP -->
+
+  <div class="popup">
+
+    <span class="close-popup">
+      &times;
+    </span>
+
+    <img src=""
+         alt="Popup Image">
+
+  </div>
+
+  <!-- AOS -->
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    // AOS
+
+    AOS.init({
+      duration:1200,
+      once:true
+    });
+
+    // CURSOR GLOW
+
+    const glow =
+    document.querySelector(".cursor-glow");
+
+    document.addEventListener("mousemove",(e)=>{
+
+      glow.style.left =
+      e.clientX + "px";
+
+      glow.style.top =
+      e.clientY + "px";
+
+    });
+
+    // VANILLA TILT
+
+    VanillaTilt.init(
+      document.querySelectorAll(".showcase-card"),
+      {
+        max:10,
+        speed:400,
+        glare:true,
+        "max-glare":0.3
+      }
+    );
+
+    // POPUP
+
+    const cards =
+    document.querySelectorAll(".showcase-card img");
+
+    const popup =
+    document.querySelector(".popup");
+
+    const popupImg =
+    document.querySelector(".popup img");
+
+    const closePopup =
+    document.querySelector(".close-popup");
+
+    cards.forEach(img=>{
+
+      img.addEventListener("click",(e)=>{
+
+        // SPARKS
+
+        for(let i=0;i<35;i++){
+
+          const spark =
+          document.createElement("span");
+
+          spark.classList.add("spark");
+
+          document.body.appendChild(spark);
+
+          spark.style.left =
+          e.pageX + "px";
+
+          spark.style.top =
+          e.pageY + "px";
+
+          spark.style.setProperty(
+            "--x",
+            `${(Math.random()-0.5)*400}px`
+          );
+
+          spark.style.setProperty(
+            "--y",
+            `${(Math.random()-0.5)*400}px`
+          );
+
+          setTimeout(()=>{
+
+            spark.remove();
+
+          },1000);
+
+        }
+
+        // OPEN POPUP
+
+        popup.classList.add("active");
+
+        popupImg.src = img.src;
+
+      });
+
+    });
+
+    // CLOSE
+
+    closePopup.addEventListener("click",()=>{
+
+      popup.classList.remove("active");
+
+    });
+
+    popup.addEventListener("click",(e)=>{
+
+      if(e.target === popup){
+
+        popup.classList.remove("active");
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>

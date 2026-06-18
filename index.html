@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mr Dhanu Portfolio</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      overflow:hidden;
+      background:#000;
+    }
+
+    /* =========================
+       LANDING PAGE
+    ========================== */
+
+    .landing{
+      width:100%;
+      height:100vh;
+
+      background:
+      linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+      ),
+      url("bg.png");
+
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      position:relative;
+    }
+
+    /* RED GLOW */
+
+    .landing::before{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background:
+      radial-gradient(circle at center,
+      rgba(255,0,0,0.18),
+      transparent 60%);
+
+      pointer-events:none;
+    }
+
+    /* =========================
+       BUTTON GROUP
+    ========================== */
+
+    .button-group{
+      display:flex;
+      gap:25px;
+      z-index:2;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .btn{
+      padding:16px 42px;
+
+      border:none;
+      outline:none;
+
+      font-size:16px;
+      font-weight:600;
+      letter-spacing:1px;
+
+      cursor:pointer;
+
+      border-radius:50px;
+
+      transition:0.4s ease;
+
+      text-decoration:none;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* VIEW MORE */
+
+    .btn-primary{
+      background:#ff1e1e;
+      color:#fff;
+
+      box-shadow:
+      0 0 15px rgba(255,0,0,0.5),
+      0 0 35px rgba(255,0,0,0.3);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px) scale(1.05);
+
+      box-shadow:
+      0 0 25px rgba(255,0,0,0.8),
+      0 0 60px rgba(255,0,0,0.5);
+    }
+
+    /* VIEW RESUME */
+
+    .btn-secondary{
+      background:transparent;
+      color:#fff;
+
+      border:2px solid #fff;
+      backdrop-filter:blur(6px);
+    }
+
+    .btn-secondary:hover{
+      background:#fff;
+      color:#000;
+
+      transform:translateY(-5px) scale(1.05);
+
+      box-shadow:
+      0 0 25px rgba(255,255,255,0.5);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:768px){
+
+      .button-group{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn{
+        width:220px;
+      }
+
+    }
+
+    /* =========================
+   TEAR TRANSITION EFFECT
+========================== */
+
+.tear-transition{
+
+  position:fixed;
+
+  top:0;
+  left:-100%;
+
+  width:100%;
+  height:100vh;
+
+  background:
+  linear-gradient(
+    120deg,
+    #000 0%,
+    #111 30%,
+    #ff1e1e 60%,
+    #000 100%
+  );
+
+  z-index:9999;
+
+  transform:skewX(-20deg);
+
+  transition:1.2s ease-in-out;
+
+  box-shadow:
+  0 0 100px rgba(255,0,0,0.7);
+
+}
+
+.tear-transition.active{
+
+  left:0;
+
+}
+  </style>
+</head>
+<body>
+
+  <!-- LANDING PAGE -->
+
+  <section class="landing">
+
+    <div class="button-group">
+
+      <!-- PORTFOLIO REDIRECT -->
+
+
+
+      <a href="portfolio.html" class="btn btn-primary transition-btn">
+         VIEW MORE
+      </a>
+      <!-- RESUME REDIRECT -->
+
+      <a href="DHANUNJAI reddy resume.pdf"
+         target="_blank"
+         class="btn btn-secondary">
+
+        VIEW RESUME
+
+      </a>
+
+    </div>
+
+  </section>
+ <!-- ADD THIS BEFORE </body> -->
+
+<script>
+
+  // SELECT BUTTON
+
+  const transitionBtn = document.querySelector(".transition-btn");
+
+  // CREATE TEAR EFFECT
+
+  transitionBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    // CREATE OVERLAY
+
+    const tear = document.createElement("div");
+
+    tear.classList.add("tear-transition");
+
+    document.body.appendChild(tear);
+
+    // START ANIMATION
+
+    setTimeout(() => {
+      tear.classList.add("active");
+    }, 10);
+
+    // REDIRECT AFTER ANIMATION
+
+    setTimeout(() => {
+      window.location.href = "portfolio.html";
+    }, 1200);
+
+  });
+
+</script>
+</body>
+</html>

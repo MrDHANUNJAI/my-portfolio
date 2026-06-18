@@ -1,0 +1,3349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Dhanunjai Reddy | Portfolio</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- AOS ANIMATION -->
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+  <style>
+/* =========================
+   TESTIMONIALS SECTION
+========================== */
+
+.testimonials-section{
+
+  padding:100px 0;
+
+  background:#050505;
+
+  overflow:hidden;
+
+  position:relative;
+
+}
+
+/* RED GLOW */
+
+.testimonials-section::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  background:rgba(255,0,0,0.08);
+
+  border-radius:50%;
+
+  top:-200px;
+  right:-150px;
+
+  filter:blur(120px);
+
+}
+
+/* MARQUEE */
+
+.marquee{
+
+  width:100%;
+
+  overflow:hidden;
+
+  margin:35px 0;
+
+  position:relative;
+
+}
+
+/* GRADIENT FADE */
+
+.marquee::before,
+.marquee::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  width:120px;
+  height:100%;
+
+  z-index:5;
+
+}
+
+.marquee::before{
+
+  left:0;
+
+  background:
+  linear-gradient(
+    to right,
+    #050505,
+    transparent
+  );
+
+}
+
+.marquee::after{
+
+  right:0;
+
+  background:
+  linear-gradient(
+    to left,
+    #050505,
+    transparent
+  );
+
+}
+
+/* CONTENT */
+
+.marquee-content{
+
+  display:flex;
+
+  gap:30px;
+
+  width:max-content;
+
+  animation:scroll 35s linear infinite;
+
+}
+
+/* REVERSE */
+
+.reverse .marquee-content{
+
+  animation-direction:reverse;
+
+}
+
+/* CARD */
+
+.testimonial-card{
+
+  min-width:320px;
+  max-width:320px;
+
+  background:#111;
+
+  border-radius:22px;
+
+  padding:30px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.4s;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+/* RED TOP BORDER */
+
+.testimonial-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:4px;
+
+  background:#ff1e1e;
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.7);
+
+}
+
+/* HOVER */
+
+.testimonial-card:hover{
+
+  transform:translateY(-10px);
+
+  border-color:#ff1e1e;
+
+  box-shadow:
+  0 0 35px rgba(255,0,0,0.2);
+
+}
+
+/* TEXT */
+
+.testimonial-card p{
+
+  color:#cfcfcf;
+
+  line-height:1.9;
+
+  margin-bottom:25px;
+
+  font-size:15px;
+
+}
+
+/* NAME */
+
+.testimonial-card h4{
+
+  color:#fff;
+
+  margin-bottom:8px;
+
+  font-size:20px;
+
+}
+
+/* ROLE */
+
+.testimonial-card span{
+
+  color:#ff1e1e;
+
+  font-size:14px;
+
+  font-weight:500;
+
+}
+
+/* SCROLL ANIMATION */
+
+@keyframes scroll{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .testimonial-card{
+
+    min-width:280px;
+    max-width:280px;
+
+    padding:25px;
+
+  }
+
+}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#050505;
+      color:#fff;
+      font-family:'Poppins',sans-serif;
+      overflow-x:hidden;
+      
+    }
+
+    /* =========================
+       SCROLL BAR
+    ========================== */
+
+    ::-webkit-scrollbar{
+      width:8px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background:#ff1e1e;
+      border-radius:10px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      z-index:1000;
+
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(10px);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#ff1e1e;
+      font-family:'Orbitron',sans-serif;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#fff;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ff1e1e;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero{
+      width:100%;
+      min-height:100vh;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:120px 8% 50px;
+
+      position:relative;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background:
+      radial-gradient(circle at center,
+      rgba(255,0,0,0.15),
+      transparent 60%);
+
+      pointer-events:none;
+    }
+
+    .hero-content{
+      max-width:600px;
+      z-index:2;
+    }
+
+    .hero-content h1{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-content h1 span{
+      color:#ff1e1e;
+    }
+
+    .hero-content p{
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    /* BUTTONS */
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+    }
+
+    .btn{
+      padding:14px 35px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .btn-primary{
+      background:#ff1e1e;
+      color:#fff;
+
+      box-shadow:
+      0 0 20px rgba(255,0,0,0.5);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px);
+    }
+
+    .btn-secondary{
+      border:2px solid #fff;
+      color:#fff;
+    }
+
+    .btn-secondary:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    /* HERO IMAGE */
+
+    .hero-image{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-image img{
+      width:420px;
+      border-radius:20px;
+
+      box-shadow:
+      0 0 40px rgba(255,0,0,0.3);
+    }
+
+    /* =========================
+       SECTION COMMON
+    ========================== */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      font-size:45px;
+      margin-bottom:50px;
+      text-align:center;
+    }
+
+    .section-title span{
+      color:#ff1e1e;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .about-content p{
+      color:#cfcfcf;
+      line-height:1.8;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      background:#111;
+      padding:30px;
+      border-radius:20px;
+
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+
+      border-color:#ff1e1e;
+
+      box-shadow:
+      0 0 20px rgba(255,0,0,0.2);
+    }
+
+    .skill-card h3{
+      margin-bottom:10px;
+      color:#ff1e1e;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#111;
+      border-radius:20px;
+      overflow:hidden;
+
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .project-content{
+      padding:25px;
+    }
+
+    .project-content h3{
+      margin-bottom:10px;
+      color:#ff1e1e;
+    }
+
+    .project-content p{
+      color:#cfcfcf;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      color:#cfcfcf;
+      margin-bottom:30px;
+    }
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      padding:14px 25px;
+      background:#111;
+      border-radius:50px;
+      text-decoration:none;
+      color:#fff;
+
+      transition:0.4s;
+    }
+
+    .socials a:hover{
+      background:#ff1e1e;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      padding:30px;
+      text-align:center;
+      background:#0a0a0a;
+      color:#777;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:1000px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-image img{
+        width:100%;
+        max-width:400px;
+        margin-top:50px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      nav ul{
+        display:none;
+      }
+
+      .hero-content h1{
+        font-size:50px;
+      }
+
+      .section-title{
+        font-size:35px;
+      }
+
+    }
+
+/* =========================
+   PUBLICATIONS SECTION
+========================== */
+
+#publications{
+  padding:100px 8%;
+  position:relative;
+}
+
+/* GRID */
+
+.publications-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(350px,1fr));
+
+  gap:35px;
+
+}
+
+/* CARD */
+
+.publication-card{
+
+  background:#111;
+
+  border-radius:25px;
+
+  padding:35px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:0.4s;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+}
+
+/* HOVER */
+
+.publication-card:hover{
+
+  transform:translateY(-10px);
+
+  border-color:#ff1e1e;
+
+  box-shadow:
+  0 0 35px rgba(255,0,0,0.2);
+
+}
+
+/* RED GLOW */
+
+.publication-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:250px;
+  height:250px;
+
+  background:rgba(255,0,0,0.12);
+
+  border-radius:50%;
+
+  top:-100px;
+  right:-100px;
+
+  filter:blur(90px);
+
+}
+
+/* ICON */
+
+.publication-icon{
+
+  width:70px;
+  height:70px;
+
+  background:#1b1b1b;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:18px;
+
+  font-size:30px;
+
+  margin-bottom:25px;
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.15);
+
+}
+
+/* BADGE */
+
+.publication-badge{
+
+  display:inline-block;
+
+  padding:7px 16px;
+
+  background:#ff1e1e;
+
+  border-radius:30px;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 0 18px rgba(255,0,0,0.4);
+
+}
+
+/* TITLE */
+
+.publication-content h3{
+
+  font-size:24px;
+
+  line-height:1.4;
+
+  margin-bottom:18px;
+
+  color:#fff;
+
+}
+
+/* DESCRIPTION */
+
+.publication-content p{
+
+  color:#cfcfcf;
+
+  line-height:1.9;
+
+  margin-bottom:25px;
+
+}
+
+/* META */
+
+.publication-meta{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+}
+
+.publication-meta span{
+
+  color:#999;
+
+  font-size:14px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .publication-content h3{
+    font-size:20px;
+  }
+
+}
+    /* =========================
+   STARTUP SECTION
+========================== */
+
+#startup{
+  padding:100px 8%;
+  position:relative;
+}
+
+/* CONTAINER */
+
+.startup-container{
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:50px;
+  align-items:center;
+
+  background:#111;
+
+  border-radius:25px;
+
+  padding:50px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+/* RED GLOW */
+
+.startup-container::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:400px;
+  height:400px;
+
+  background:rgba(255,0,0,0.15);
+
+  border-radius:50%;
+
+  top:-120px;
+  right:-120px;
+
+  filter:blur(100px);
+
+}
+
+/* IMAGE */
+
+.startup-image img{
+
+  width:100%;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 0 40px rgba(255,0,0,0.25);
+
+  transition:0.5s;
+
+}
+
+.startup-image img:hover{
+
+  transform:scale(1.03);
+
+}
+
+/* CONTENT */
+
+.startup-content{
+  position:relative;
+  z-index:2;
+}
+
+.startup-tag{
+
+  display:inline-block;
+
+  padding:8px 18px;
+
+  background:#ff1e1e;
+
+  border-radius:30px;
+
+  font-size:14px;
+  font-weight:600;
+
+  margin-bottom:20px;
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.5);
+
+}
+
+.startup-content h3{
+
+  font-size:45px;
+
+  margin-bottom:20px;
+
+  color:#fff;
+
+}
+
+.startup-content p{
+
+  color:#cfcfcf;
+
+  line-height:1.9;
+
+  margin-bottom:35px;
+
+}
+
+/* FEATURES */
+
+.startup-features{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:20px;
+
+}
+
+/* FEATURE BOX */
+
+.feature-box{
+
+  background:#1a1a1a;
+
+  padding:22px;
+
+  border-radius:18px;
+
+  transition:0.4s;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+}
+
+.feature-box:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#ff1e1e;
+
+  box-shadow:
+  0 0 25px rgba(255,0,0,0.2);
+
+}
+
+.feature-box h4{
+
+  color:#ff1e1e;
+
+  margin-bottom:8px;
+
+  font-size:18px;
+
+}
+
+.feature-box span{
+
+  color:#bbb;
+
+  font-size:14px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .startup-container{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+@media(max-width:768px){
+
+  .startup-content h3{
+    font-size:35px;
+  }
+
+  .startup-features{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+
+/* =========================
+   EXPERIENCE SECTION
+========================== */
+
+#experience{
+  padding:100px 8%;
+  position:relative;
+}
+
+/* TIMELINE */
+
+.timeline{
+
+  position:relative;
+
+  max-width:1200px;
+
+  margin:auto;
+
+}
+
+/* CENTER LINE */
+
+.timeline::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:4px;
+  height:100%;
+
+  background:#ff1e1e;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.5);
+
+}
+
+/* CARD */
+
+.timeline-card{
+
+  position:relative;
+
+  width:50%;
+
+  padding:30px 50px;
+
+}
+
+/* LEFT */
+
+.timeline-card:nth-child(odd){
+
+  left:0;
+
+}
+
+/* RIGHT */
+
+.timeline-card:nth-child(even){
+
+  left:50%;
+
+}
+
+/* CONTENT */
+
+.timeline-content{
+
+  background:#111;
+
+  padding:35px;
+
+  border-radius:20px;
+
+  position:relative;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.4s;
+
+}
+
+.timeline-content:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#ff1e1e;
+
+  box-shadow:
+  0 0 30px rgba(255,0,0,0.2);
+
+}
+
+/* DOT */
+
+.timeline-dot{
+
+  position:absolute;
+
+  width:22px;
+  height:22px;
+
+  background:#ff1e1e;
+
+  border-radius:50%;
+
+  top:40px;
+
+  right:-11px;
+
+  z-index:10;
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.7);
+
+}
+
+.timeline-card:nth-child(even) .timeline-dot{
+
+  left:-11px;
+
+}
+
+/* TEXT */
+
+.timeline-content h3{
+
+  font-size:28px;
+
+  margin-bottom:10px;
+
+  color:#fff;
+
+}
+
+.timeline-content h4{
+
+  color:#ff1e1e;
+
+  margin-bottom:18px;
+
+  font-size:18px;
+
+}
+
+.timeline-content p{
+
+  color:#cfcfcf;
+
+  line-height:1.8;
+
+  margin-bottom:20px;
+
+}
+
+/* LIST */
+
+.timeline-content ul{
+
+  padding-left:18px;
+
+}
+
+.timeline-content ul li{
+
+  color:#bbb;
+
+  margin-bottom:12px;
+
+  line-height:1.7;
+
+}
+
+/* TAG */
+
+.experience-tag{
+
+  display:inline-block;
+
+  padding:8px 18px;
+
+  background:#ff1e1e;
+
+  border-radius:30px;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  margin-bottom:18px;
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.4);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .timeline::before{
+    left:20px;
+  }
+
+  .timeline-card{
+
+    width:100%;
+
+    padding-left:70px;
+    padding-right:20px;
+
+    left:0 !important;
+
+  }
+
+  .timeline-dot{
+
+    left:9px !important;
+
+  }
+
+}
+
+@media(max-width:768px){
+
+  .timeline-content h3{
+    font-size:22px;
+  }
+
+}
+
+/* =========================
+   ACHIEVEMENTS SECTION
+========================== */
+
+#achievements{
+  padding:100px 8%;
+}
+
+/* WRAPPER */
+
+.achievement-wrapper{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:40px;
+
+}
+
+/* BOX */
+
+.achievement-box{
+
+  background:#111;
+
+  padding:40px;
+
+  border-radius:25px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.4s;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+/* HOVER */
+
+.achievement-box:hover{
+
+  transform:translateY(-8px);
+
+  border-color:#ff1e1e;
+
+  box-shadow:
+  0 0 35px rgba(255,0,0,0.2);
+
+}
+
+/* RED GLOW */
+
+.achievement-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:250px;
+  height:250px;
+
+  background:rgba(255,0,0,0.12);
+
+  border-radius:50%;
+
+  top:-120px;
+  right:-120px;
+
+  filter:blur(90px);
+
+}
+
+/* TITLE */
+
+.achievement-box h3{
+
+  font-size:30px;
+
+  margin-bottom:35px;
+
+  color:#fff;
+
+}
+
+/* LIST */
+
+.achievement-list{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+/* CARD */
+
+.achievement-card{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  background:#1a1a1a;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  transition:0.4s;
+
+}
+
+.achievement-card:hover{
+
+  transform:translateX(10px);
+
+  background:#1f1f1f;
+
+}
+
+/* ICON */
+
+.achievement-icon{
+
+  font-size:28px;
+
+  min-width:50px;
+  height:50px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#ff1e1e;
+
+  border-radius:15px;
+
+  box-shadow:
+  0 0 20px rgba(255,0,0,0.4);
+
+}
+
+/* TEXT */
+
+.achievement-card h4{
+
+  color:#fff;
+
+  margin-bottom:6px;
+
+}
+
+.achievement-card p{
+
+  color:#bbb;
+
+  font-size:14px;
+
+}
+
+/* INFO GRID */
+
+.info-grid{
+
+  display:grid;
+
+  gap:20px;
+
+}
+
+/* INFO CARD */
+
+.info-card{
+
+  background:#1a1a1a;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  transition:0.4s;
+
+}
+
+.info-card:hover{
+
+  transform:translateY(-5px);
+
+  border:1px solid #ff1e1e;
+
+}
+
+/* INFO TITLE */
+
+.info-card h4{
+
+  color:#ff1e1e;
+
+  margin-bottom:15px;
+
+  font-size:20px;
+
+}
+
+/* INFO TEXT */
+
+.info-card p{
+
+  color:#cfcfcf;
+
+  line-height:1.9;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .achievement-wrapper{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+@media(max-width:768px){
+
+  .achievement-box{
+    padding:30px;
+  }
+
+  .achievement-box h3{
+    font-size:24px;
+  }
+
+}
+
+/* =========================
+   ACHIEVEMENT GALLERY
+========================== */
+
+#achievement-gallery{
+
+  padding:100px 0;
+
+  overflow:hidden;
+
+  background:#050505;
+
+  position:relative;
+
+}
+
+/* RED GLOW */
+
+#achievement-gallery::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  background:rgba(255,0,0,0.08);
+
+  border-radius:50%;
+
+  bottom:-200px;
+  left:-150px;
+
+  filter:blur(120px);
+
+}
+
+/* MARQUEE */
+
+.gallery-marquee{
+
+  width:100%;
+
+  overflow:hidden;
+
+  position:relative;
+
+  margin-top:50px;
+
+}
+
+/* FADE EFFECT */
+
+.gallery-marquee::before,
+.gallery-marquee::after{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  width:120px;
+  height:100%;
+
+  z-index:5;
+
+}
+
+.gallery-marquee::before{
+
+  left:0;
+
+  background:
+  linear-gradient(
+    to right,
+    #050505,
+    transparent
+  );
+
+}
+
+.gallery-marquee::after{
+
+  right:0;
+
+  background:
+  linear-gradient(
+    to left,
+    #050505,
+    transparent
+  );
+
+}
+
+/* TRACK */
+
+.gallery-track{
+
+  display:flex;
+
+  gap:30px;
+
+  width:max-content;
+
+  animation:galleryScroll 35s linear infinite;
+
+}
+
+/* CARD */
+
+.gallery-card{
+
+  width:400px;
+  height:260px;
+
+  border-radius:25px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  cursor:pointer;
+
+  transition:0.5s;
+
+  border:2px solid rgba(255,255,255,0.05);
+
+}
+
+/* IMAGE */
+
+.gallery-card img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.6s;
+
+}
+
+/* OVERLAY */
+
+.gallery-card::before{
+
+  content:"VIEW";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.7)
+  );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:2px;
+
+  opacity:0;
+
+  transition:0.5s;
+
+  z-index:2;
+
+}
+
+/* HOVER */
+
+.gallery-card:hover{
+
+  transform:translateY(-12px);
+
+  border-color:#ff1e1e;
+
+  box-shadow:
+  0 0 40px rgba(255,0,0,0.25);
+
+}
+
+.gallery-card:hover img{
+
+  transform:scale(1.08);
+
+}
+
+.gallery-card:hover::before{
+
+  opacity:1;
+
+}
+
+/* SCROLL */
+
+@keyframes galleryScroll{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+/* =========================
+   POPUP
+========================== */
+
+.image-popup{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.95);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.5s;
+
+  z-index:99999;
+
+}
+
+/* ACTIVE */
+
+.image-popup.active{
+
+  opacity:1;
+  visibility:visible;
+
+}
+
+/* POPUP IMAGE */
+
+.popup-image{
+
+  width:85%;
+  max-width:1200px;
+
+  max-height:90vh;
+
+  object-fit:contain;
+
+  border-radius:20px;
+
+  transform:scale(0.8);
+
+  transition:0.5s;
+
+  box-shadow:
+  0 0 60px rgba(255,0,0,0.25);
+
+}
+
+.image-popup.active .popup-image{
+
+  transform:scale(1);
+
+}
+
+/* CLOSE */
+
+.close-popup{
+
+  position:absolute;
+
+  top:30px;
+  right:40px;
+
+  font-size:45px;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.close-popup:hover{
+
+  color:#ff1e1e;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .gallery-card{
+
+    width:300px;
+    height:200px;
+
+  }
+
+  .popup-image{
+
+    width:95%;
+
+  }
+
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">DHANU</div>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-content" data-aos="fade-right">
+
+      <h1>
+        Creative <span>Designer</span><br>
+        & Developer
+      </h1>
+
+      <p>
+        I create futuristic digital experiences, gaming visuals,
+        cinematic graphics, modern websites and powerful creative branding.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="work.html" class="btn btn-primary">
+          View Works
+        </a>
+
+        <a href="DHANUNJAI reddy resume.pdf"
+           target="_blank"
+           class="btn btn-secondary">
+
+          Resume
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- IMAGE -->
+
+    <div class="hero-image" data-aos="fade-left">
+
+      <img src="profile.png" alt="Profile">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About <span>Me</span>
+    </h2>
+
+    <div class="about">
+
+      <img src="about.png" alt="About Image" data-aos="zoom-in">
+
+      <div class="about-content" data-aos="fade-left">
+
+        <p>
+          I am a Graphic Designer, Creative Developer and Tech Enthusiast
+          passionate about building cinematic visuals, gaming designs,
+          futuristic interfaces and creative digital experiences.
+          I also work on AI, Web Development, Branding and Creative Technology.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+ <!-- SKILLS SECTION -->
+
+<section id="skills">
+
+  <h2 class="section-title">
+    Technical <span>Skills</span>
+  </h2>
+
+  <div class="skills-grid">
+
+    <!-- PROGRAMMING -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Programming</h3>
+
+      <p>
+        C, C++, Python, Java
+      </p>
+
+    </div>
+
+    <!-- WEB DEVELOPMENT -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Web Development</h3>
+
+      <p>
+        HTML, CSS, JavaScript, React, Node.js, Express
+      </p>
+
+    </div>
+
+    <!-- DATABASE -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Database</h3>
+
+      <p>
+        MySQL, MongoDB
+      </p>
+
+    </div>
+
+    <!-- AI / ML -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>AI / ML</h3>
+
+      <p>
+        TensorFlow, OpenCV, Scikit-learn, NLP,
+        Computer Vision, Deep Learning, Generative AI
+      </p>
+
+    </div>
+
+    <!-- EMBEDDED -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Embedded Systems</h3>
+
+      <p>
+        ESP32, Raspberry Pi, Arduino,
+        Sensor Integration
+      </p>
+
+    </div>
+
+    <!-- IoT -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>IoT & Automation</h3>
+
+      <p>
+        MQTT, Cloud Communication,
+        Smart Automation
+      </p>
+
+    </div>
+
+    <!-- SIMULATION -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Simulation</h3>
+
+      <p>
+        MATLAB, Simulink, PSIM
+      </p>
+
+    </div>
+
+    <!-- TOOLS -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Development Tools</h3>
+
+      <p>
+        Linux, Git, LaTeX, MS Office
+      </p>
+
+    </div>
+
+    <!-- DESIGN -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>Creative Design</h3>
+
+      <p>
+        Figma, Canva, Photoshop, Illustrator
+      </p>
+
+    </div>
+
+    <!-- IT / ADMIN -->
+
+    <div class="skill-card" data-aos="fade-up">
+
+      <h3>IT & Administration</h3>
+
+      <p>
+        Networking, System Administration,
+        Hardware Maintenance, Troubleshooting
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- PROJECTS SECTION -->
+
+<section id="projects">
+
+  <h2 class="section-title">
+    Featured <span>Projects</span>
+  </h2>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+      <div class="project-content">
+
+        <h3>Wireless EV System</h3>
+
+        <p>
+          Designed a wireless charging system using inductive
+          coupling with integrated control communication
+          for electric vehicles.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 2 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+
+      <div class="project-content">
+
+        <h3>Smart Home Automation</h3>
+
+        <p>
+          Developed an IoT-based automation system using
+          Raspberry Pi with cloud-based monitoring,
+          automation and remote control features.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 3 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+
+      <div class="project-content">
+
+        <h3>Bittu AI Assistant</h3>
+
+        <p>
+          Built a voice-controlled AI assistant with
+          graphical interface, automation features,
+          smart commands and IoT integration.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 4 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+      <div class="project-content">
+
+        <h3>Humanoid Robot</h3>
+
+        <p>
+          Implemented AI-based gesture recognition
+          and human interaction system using
+          computer vision and machine learning.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 5 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+
+      <div class="project-content">
+
+        <h3>College Portal</h3>
+
+        <p>
+          Developed a secure full-stack application
+          with authentication, admin dashboard,
+          database management and REST API integration.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 6 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+
+      <div class="project-content">
+
+        <h3>ERP System</h3>
+
+        <p>
+          Created a business management platform for
+          employee records, inventory management,
+          sales tracking and workflow automation.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 7 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+
+
+      <div class="project-content">
+
+        <h3>AURA-SCAN</h3>
+
+        <p>
+          Developed a cybersecurity vulnerability scanner
+          capable of detecting common web vulnerabilities
+          based on OWASP security standards.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 8 -->
+
+    <div class="project-card" data-aos="zoom-in">
+
+      
+      <div class="project-content">
+
+        <h3>Gaming Branding Designs</h3>
+
+        <p>
+          Designed cinematic gaming posters,
+          esports branding, YouTube banners,
+          thumbnails and social media visuals.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- STARTUP SECTION -->
+
+<section id="startup">
+
+  <h2 class="section-title">
+    Startup <span>Experience</span>
+  </h2>
+
+  <div class="startup-container" data-aos="zoom-in">
+
+    <!-- LEFT SIDE -->
+
+    <div class="startup-image">
+
+      <img src="profile.png" alt="SBG Labs">
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="startup-content">
+
+      <span class="startup-tag">
+        Founder & Creator
+      </span>
+
+      <h3>SBG Labs</h3>
+
+      <p>
+        Founded a technology initiative focused on
+        Artificial Intelligence, IoT and Embedded Systems.
+        Led the development of innovative smart solutions,
+        AI-based systems and conducted technical workshops
+        for students and aspiring developers.
+      </p>
+
+      <!-- STARTUP FEATURES -->
+
+      <div class="startup-features">
+
+        <div class="feature-box">
+          <h4>AI Solutions</h4>
+          <span>Smart Automation & AI Systems</span>
+        </div>
+
+        <div class="feature-box">
+          <h4>IoT Projects</h4>
+          <span>Cloud & Sensor-Based Solutions</span>
+        </div>
+
+        <div class="feature-box">
+          <h4>Embedded Tech</h4>
+          <span>Arduino, ESP32 & Raspberry Pi</span>
+        </div>
+
+        <div class="feature-box">
+          <h4>Workshops</h4>
+          <span>Mentorship & Technical Sessions</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EXPERIENCE SECTION -->
+
+<section id="experience">
+
+  <h2 class="section-title">
+    Professional <span>Experience</span>
+  </h2>
+
+  <div class="timeline">
+
+    <!-- EXPERIENCE 1 -->
+
+    <div class="timeline-card" data-aos="fade-right">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <span class="experience-tag">
+          Current Role
+        </span>
+
+        <h3>
+          Technical Mentor & Trainer
+        </h3>
+
+        <h4>
+          Kuppam Engineering College — EEE Department
+        </h4>
+
+        <p>
+          Working as a Technical Trainer under the
+          SPARKS Club presented by students.
+          Conducting workshops and technical sessions
+          on IoT, Embedded Systems, Arduino and
+          real-time project development.
+        </p>
+
+        <ul>
+
+          <li>
+            Delivered hands-on workshops on IoT,
+            Embedded Systems and Arduino.
+          </li>
+
+          <li>
+            Mentored students in real-time
+            hardware and software projects.
+          </li>
+
+          <li>
+            Guided students in innovation,
+            problem solving and technical development.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCE 2 -->
+
+    <div class="timeline-card" data-aos="fade-left">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <h3>
+          Lab Instructor
+        </h3>
+
+        <h4>
+          Golden Valley Integrated Campus
+        </h4>
+
+        <p>
+          Conducted practical sessions and
+          technical training for programming,
+          simulations and lab-based activities.
+        </p>
+
+        <ul>
+
+          <li>
+            Conducted hands-on sessions in
+            programming and simulation tools.
+          </li>
+
+          <li>
+            Assisted students in practical
+            learning and academic projects.
+          </li>
+
+          <li>
+            Maintained lab systems and
+            supported technical activities.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCE 3 -->
+
+    <div class="timeline-card" data-aos="fade-right">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <h3>
+          System Administrator
+        </h3>
+
+        <h4>
+          Golden Valley Integrated Campus
+        </h4>
+
+        <p>
+          Managed IT infrastructure, Linux systems,
+          networking and troubleshooting operations
+          across academic labs and systems.
+        </p>
+
+        <ul>
+
+          <li>
+            Managed Linux systems and networking.
+          </li>
+
+          <li>
+            Performed system optimization and
+            troubleshooting.
+          </li>
+
+          <li>
+            Maintained infrastructure stability
+            and system performance.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCE 4 -->
+
+    <div class="timeline-card" data-aos="fade-left">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+
+        <h3>
+          Web Developer Intern
+        </h3>
+
+        <h4>
+          Golden Valley Integrated Campus
+        </h4>
+
+        <p>
+          Worked on modern web applications,
+          backend APIs and database systems
+          using full-stack technologies.
+        </p>
+
+        <ul>
+
+          <li>
+            Built web applications using
+            React, Node.js and MySQL.
+          </li>
+
+          <li>
+            Developed REST APIs and
+            backend functionalities.
+          </li>
+
+          <li>
+            Improved application performance
+            and workflow efficiency.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- PUBLICATIONS SECTION -->
+
+<section id="publications">
+
+  <h2 class="section-title">
+    Research <span>Publications</span>
+  </h2>
+
+  <div class="publications-grid">
+
+    <!-- PUBLICATION 1 -->
+
+    <div class="publication-card" data-aos="fade-up">
+
+      <div class="publication-icon">
+        📘
+      </div>
+
+      <div class="publication-content">
+
+        <span class="publication-badge">
+          Project Leader
+        </span>
+
+        <h3>
+          AURA-SCAN: Lightweight Web Vulnerability Scanner
+        </h3>
+
+        <p>
+          Developed an automated lightweight scanning tool
+          capable of detecting OWASP Top-10 vulnerabilities
+          in web applications with optimized performance
+          and security analysis.
+        </p>
+
+        <div class="publication-meta">
+
+          <span>
+            Published: March 7, 2026
+          </span>
+
+          <span>
+            Zenodo (CERN)
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PUBLICATION 2 -->
+
+    <div class="publication-card" data-aos="fade-up">
+
+      <div class="publication-icon">
+        🤖
+      </div>
+
+      <div class="publication-content">
+
+        <span class="publication-badge">
+          Author
+        </span>
+
+        <h3>
+          Development of Personal AI Assistant
+        </h3>
+
+        <p>
+          Designed and developed a voice-enabled AI assistant
+          capable of automation, intelligent responses,
+          smart interactions and productivity enhancement.
+        </p>
+
+        <div class="publication-meta">
+
+          <span>
+            Published: April 5, 2026
+          </span>
+
+          <span>
+            Zenodo
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PUBLICATION 3 -->
+
+    <div class="publication-card" data-aos="fade-up">
+
+      <div class="publication-icon">
+        ⚡
+      </div>
+
+      <div class="publication-content">
+
+        <span class="publication-badge">
+          Author
+        </span>
+
+        <h3>
+          Wireless Charging & Control System for EVs
+        </h3>
+
+        <p>
+          Proposed and implemented a wireless electric vehicle
+          charging system with efficient inductive power transfer
+          and remote monitoring capabilities.
+        </p>
+
+        <div class="publication-meta">
+
+          <span>
+            Published: March 21, 2026
+          </span>
+
+          <span>
+            Zenodo
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS SECTION -->
+
+<section id="achievements">
+
+  <h2 class="section-title">
+    Achievements & <span>Additional Info</span>
+  </h2>
+
+  <div class="achievement-wrapper">
+
+    <!-- ACHIEVEMENTS -->
+
+    <div class="achievement-box" data-aos="fade-right">
+
+      <h3>🏆 Achievements</h3>
+
+      <div class="achievement-list">
+
+        <div class="achievement-card">
+
+          <span class="achievement-icon">🥇</span>
+
+          <div>
+            <h4>State-Level Winner</h4>
+            <p>Anveshana Innovation Competition</p>
+          </div>
+
+        </div>
+
+        <div class="achievement-card">
+
+          <span class="achievement-icon">🏅</span>
+
+          <div>
+            <h4>5th Prize</h4>
+            <p>National Anveshana Expo</p>
+          </div>
+
+        </div>
+
+        <div class="achievement-card">
+
+          <span class="achievement-icon">🔬</span>
+
+          <div>
+            <h4>District Science Exhibition Winner</h4>
+            <p>Innovation & Technical Project Showcase</p>
+          </div>
+
+        </div>
+
+        <div class="achievement-card">
+
+          <span class="achievement-icon">🎓</span>
+
+          <div>
+            <h4>Outstanding Mentor Award</h4>
+            <p>Technical Mentorship & Student Guidance</p>
+          </div>
+
+        </div>
+
+        <div class="achievement-card">
+
+          <span class="achievement-icon">💻</span>
+
+          <div>
+            <h4>Runner-up</h4>
+            <p>Cyratech Hackathon 2024</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ADDITIONAL INFO -->
+
+    <div class="achievement-box" data-aos="fade-left">
+
+      <h3>📌 Additional Information</h3>
+
+      <div class="info-grid">
+
+        <!-- CERTIFICATIONS -->
+
+        <div class="info-card">
+
+          <h4>Certifications</h4>
+
+          <p>
+            AI in Robotics<br>
+            Technical Presentation (JNTUA)
+          </p>
+
+        </div>
+
+        <!-- LANGUAGES -->
+
+        <div class="info-card">
+
+          <h4>Languages</h4>
+
+          <p>
+            Telugu<br>
+            English<br>
+            Hindi<br>
+            Kannada<br>
+            Tamil
+          </p>
+
+        </div>
+
+        <!-- INTERESTS -->
+
+        <div class="info-card">
+
+          <h4>Interests</h4>
+
+          <p>
+            AI Systems<br>
+            Robotics<br>
+            Teaching<br>
+            Innovation
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TESTIMONIALS SECTION -->
+
+<section class="testimonials-section" id="testimonials">
+
+  <h2 class="section-title">
+    Client <span>Testimonials</span>
+  </h2>
+
+  <!-- ROW 1 -->
+
+  <div class="marquee">
+
+    <div class="marquee-content">
+
+      <!-- CARD -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "Amazing portfolio design! Very modern and smooth."
+        </p>
+
+        <h4>Rohit Sharma</h4>
+
+        <span>Portfolio Design</span>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "My YouTube thumbnails CTR increased a lot!"
+        </p>
+
+        <h4>Priya Reddy</h4>
+
+        <span>Thumbnail Design</span>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "Clean and bug-free code delivery."
+        </p>
+
+        <h4>Arjun Kumar</h4>
+
+        <span>Web Development</span>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "Poster designs were super creative."
+        </p>
+
+        <h4>Sneha Patel</h4>
+
+        <span>Poster Design</span>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "Video editing quality is top notch!"
+        </p>
+
+        <h4>Rahul Verma</h4>
+
+        <span>Video Editing</span>
+
+      </div>
+
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "Amazing portfolio design! Very modern and smooth."
+        </p>
+
+        <h4>Rohit Sharma</h4>
+
+        <span>Portfolio Design</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "My YouTube thumbnails CTR increased a lot!"
+        </p>
+
+        <h4>Priya Reddy</h4>
+
+        <span>Thumbnail Design</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Clean and bug-free code delivery."
+        </p>
+
+        <h4>Arjun Kumar</h4>
+
+        <span>Web Development</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Poster designs were super creative."
+        </p>
+
+        <h4>Sneha Patel</h4>
+
+        <span>Poster Design</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Video editing quality is top notch!"
+        </p>
+
+        <h4>Rahul Verma</h4>
+
+        <span>Video Editing</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ROW 2 -->
+
+  <div class="marquee reverse">
+
+    <div class="marquee-content">
+
+      <div class="testimonial-card">
+
+        <p>
+          "Highly recommend for web projects."
+        </p>
+
+        <h4>Deepak Reddy</h4>
+
+        <span>Web Development</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Very creative thumbnails."
+        </p>
+
+        <h4>Pooja Sharma</h4>
+
+        <span>Thumbnail Design</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Editing work is cinematic."
+        </p>
+
+        <h4>Ajay Verma</h4>
+
+        <span>Video Editing</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Creative photo retouching."
+        </p>
+
+        <h4>Neha Iyer</h4>
+
+        <span>Photo Editing</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Very efficient coding work."
+        </p>
+
+        <h4>Sai Krishna</h4>
+
+        <span>Coding</span>
+
+      </div>
+
+      <!-- DUPLICATE -->
+
+      <div class="testimonial-card">
+
+        <p>
+          "Highly recommend for web projects."
+        </p>
+
+        <h4>Deepak Reddy</h4>
+
+        <span>Web Development</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Very creative thumbnails."
+        </p>
+
+        <h4>Pooja Sharma</h4>
+
+        <span>Thumbnail Design</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Editing work is cinematic."
+        </p>
+
+        <h4>Ajay Verma</h4>
+
+        <span>Video Editing</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Creative photo retouching."
+        </p>
+
+        <h4>Neha Iyer</h4>
+
+        <span>Photo Editing</span>
+
+      </div>
+
+      <div class="testimonial-card">
+
+        <p>
+          "Very efficient coding work."
+        </p>
+
+        <h4>Sai Krishna</h4>
+
+        <span>Coding</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ACHIEVEMENT GALLERY -->
+
+<section id="achievement-gallery">
+
+  <h2 class="section-title">
+    Achievement <span>Gallery</span>
+  </h2>
+
+  <!-- SCROLL ROW -->
+
+  <div class="gallery-marquee">
+
+    <div class="gallery-track">
+
+      <!-- IMAGE 1 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/1.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 2 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/2.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 3 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/3.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 4 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/4.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 5 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/5.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- DUPLICATE FOR LOOP -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/6.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/7.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/8.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/9.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/10.jpeg"
+          alt="Achievement">
+
+      </div>
+      <div class="gallery-card">
+
+        <img
+          src="achievements/11.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 2 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/12.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 3 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/13.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 4 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/14.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- IMAGE 5 -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/15.jpeg"
+          alt="Achievement">
+
+      </div>
+
+      <!-- DUPLICATE FOR LOOP -->
+
+      <div class="gallery-card">
+
+        <img
+          src="achievements/16.jpeg"
+          alt="Achievement">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- POPUP MODAL -->
+
+<div class="image-popup" id="imagePopup">
+
+  <span class="close-popup">&times;</span>
+
+  <img
+    class="popup-image"
+    id="popupImage"
+    src=""
+    alt="Achievement">
+
+</div>
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">
+      Contact <span>Me</span>
+    </h2>
+
+    <p>
+      Let's create something powerful together.
+    </p>
+
+    <div class="socials">
+
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Discord</a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 DHANUNJAI REDDY • ALL RIGHTS RESERVED
+
+  </footer>
+
+  <!-- AOS SCRIPT -->
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+
+    AOS.init({
+      duration:1200,
+      once:true
+    });
+
+
+
+  </script>
+<!-- AOS SCRIPT -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+  AOS.init({
+    duration:1200,
+    once:true
+  });
+
+</script>
+<!-- SCRIPT -->
+
+<script>
+
+  // SELECT ELEMENTS
+
+  const galleryCards =
+  document.querySelectorAll(".gallery-card img");
+
+  const popup =
+  document.getElementById("imagePopup");
+
+  const popupImage =
+  document.getElementById("popupImage");
+
+  const closePopup =
+  document.querySelector(".close-popup");
+
+  // OPEN POPUP
+
+  galleryCards.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+      popup.classList.add("active");
+
+      popupImage.src = img.src;
+
+    });
+
+  });
+
+  // CLOSE POPUP
+
+  closePopup.addEventListener("click", () => {
+
+    popup.classList.remove("active");
+
+  });
+
+  // CLOSE WHEN CLICK OUTSIDE
+
+  popup.addEventListener("click", (e) => {
+
+    if(e.target === popup){
+
+      popup.classList.remove("active");
+
+    }
+
+  });
+
+</script>
+</body>
+</html>
